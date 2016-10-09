@@ -9,6 +9,7 @@ import _ from 'underscore';
 var _user={displayName: "unknown", name: "unknown", "gender": "unknown"};
 var _locations = [];
 var _state = "idle";
+var _results = {};
 
 const AppStore = assign({}, EventEmitter.prototype, {
   getTitle() {
@@ -22,6 +23,9 @@ const AppStore = assign({}, EventEmitter.prototype, {
   },
   getState() {
     return _state;
+  },
+  getResults() {
+    return _results;
   },
   emitChange() {
     this.emit(CHANGE_EVENT);
@@ -58,6 +62,7 @@ const AppStore = assign({}, EventEmitter.prototype, {
       case ActionTypes.CHECK_WEATHER:
         {
           _state = "checking";
+          _results = {};
         }
         AppStore.emitChange();
         break;
@@ -65,7 +70,7 @@ const AppStore = assign({}, EventEmitter.prototype, {
         {
           let {response, user, location} = action;
           _locations.splice(_locations.indexOf(location), 1);
-          console.log(response);
+          _results[location] = response;
           if (_locations.length === 0)
             _state="idle";
         }
