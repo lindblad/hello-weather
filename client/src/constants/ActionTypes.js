@@ -7,4 +7,5 @@ export default keymirror({
   REQUEST_DATA_SUCCESS: null,
   REQUEST_DATA_ERROR: null,
   ADD_LOCATION: null,
+  REMOVE_LOCATION: null,
 });

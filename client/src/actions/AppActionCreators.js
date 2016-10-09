@@ -16,6 +16,12 @@ const AppActionCreators = {
       location: location
     });
   },
+  removeLocation(location) {
+    AppDispatcher.handleViewAction({
+      type: ActionTypes.REMOVE_LOCATION,
+      location: location
+    });
+  },
   navigateTo(url) {
     hashHistory.push(url);
   },

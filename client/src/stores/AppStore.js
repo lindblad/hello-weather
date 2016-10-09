@@ -44,6 +44,13 @@ const AppStore = assign({}, EventEmitter.prototype, {
         }
         AppStore.emitChange();
         break;
+      case ActionTypes.REMOVE_LOCATION:
+        {
+          let {location} = action;
+          _locations.splice(_locations.indexOf(location), 1);
+        }
+        AppStore.emitChange();
+        break;
       default:
         // no op
     }
