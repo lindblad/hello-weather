@@ -11,22 +11,14 @@ const Header = React.createClass({
     return (
       <header className="ui yellow inverted vertical segment app-header">
         <div className="ui grid">
-          <div className="two wide column">
-          </div>
-          <div className="middle aligned eleven wide column">
-            <h1 className="ui header">{title}</h1>
-          </div>
-          <div className="middle aligned two wide column">
-            <div className="item">
-              <div className="ui image">
-                <img className="user photo" src={user.photo} alt=""/>
-              </div>
-              <div className="content">
-                <a className="user name">{name}</a>
-              </div>
-            </div>
-          </div>
           <div className="one wide column">
+          </div>
+          <div className="middle aligned ten wide column">
+            <div className="ui header">{title}</div>
+          </div>
+          <div className="middle aligned five wide column">
+            <img className="ui bottom aligned image user photo" 
+              src={user.photo} alt=""/>
           </div>
         </div>
       </header>

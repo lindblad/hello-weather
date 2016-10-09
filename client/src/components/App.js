@@ -37,10 +37,9 @@ const App = React.createClass({
     return (
       <div>
         <Header user={user} project={project} location={this.props.location} title={title}/>
-          <main style={{minHeight: "75vh"}}>
+          <main className="content">
             {this.props.children}
           </main>
-        <Footer title={title}/>
       </div>  
     );
   }
