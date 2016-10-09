@@ -13,7 +13,7 @@ var _results = {};
 
 const AppStore = assign({}, EventEmitter.prototype, {
   getTitle() {
-    return "sexy weather";
+    return "hello weather";
   },
   getUser() {
     return _user;
