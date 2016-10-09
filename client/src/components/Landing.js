@@ -35,9 +35,9 @@ const Landing = React.createClass({
       <div className="ui white vertical segment">
         <div className="ui container main">
           <div className="ui vertical segment">
-            <div className="ui action input">
+            <div className="ui large action input">
               <input type="text" placeholder="Enter a location..." ref="locationInput" onChange={this._onLocationInputChange}/>
-                <button className={"ui orange icon button"  + (hasAddDisabled ? " disabled" : "")} onClick={this._onAdd}>
+                <button className={"ui orange large icon button"  + (hasAddDisabled ? " disabled" : "")} onClick={this._onAdd}>
                   <i className="plus icon" />
                 </button>
             </div>
