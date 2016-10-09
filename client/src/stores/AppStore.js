@@ -12,7 +12,7 @@ var _state = "idle";
 
 const AppStore = assign({}, EventEmitter.prototype, {
   getTitle() {
-    return "hello weather";
+    return "sexy weather";
   },
   getUser() {
     return _user;
@@ -62,8 +62,8 @@ const AppStore = assign({}, EventEmitter.prototype, {
         AppStore.emitChange();
         break;
       case ActionTypes.REQUEST_WEATHER_SUCCESS:
-        let {response, user, location} = action;
         {
+          let {response, user, location} = action;
           _locations.splice(_locations.indexOf(location), 1);
           console.log(response);
           if (_locations.length === 0)

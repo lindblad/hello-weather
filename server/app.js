@@ -60,7 +60,7 @@ app.use(passport.session());
 var proxyOptions = {
   target: "http://api.openweathermap.org/data/2.5",
   onProxyReq: function(proxyReq, req, res) {
-    proxyReq.path += `&appid=${process.env.WEATHER_API_KEY}`;
+    proxyReq.path += `&appid=${process.env.WEATHER_API_KEY}&units=metric`;
     proxyReq.end();
   }
 };
