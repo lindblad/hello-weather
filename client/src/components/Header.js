@@ -9,7 +9,7 @@ const Header = React.createClass({
     let {user, location, title} = this.props;
     let name = user.name && user.name != "" ? user.name : user.displayName; 
     return (
-      <div className="ui yellow inverted vertical segment app-header">
+      <header className="ui yellow inverted vertical segment app-header">
         <div className="ui grid">
           <div className="two wide column">
           </div>
@@ -29,7 +29,7 @@ const Header = React.createClass({
           <div className="one wide column">
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 });

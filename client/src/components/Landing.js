@@ -10,7 +10,14 @@ const Landing = React.createClass({
     return (
       <div className="ui white vertical segment">
         <div className="ui container main">
-          Here goes the content
+          <div className="ui raised segment">
+            <div className="ui action input">
+              <input type="text" placeholder="Enter a location..."/>
+                <button className="ui blue icon button">
+                  <i className="plus icon" />
+                </button>
+            </div>
+          </div>
         </div>
       </div>
     );

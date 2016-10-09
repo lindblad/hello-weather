@@ -37,7 +37,9 @@ const App = React.createClass({
     return (
       <div>
         <Header user={user} project={project} location={this.props.location} title={title}/>
-          {this.props.children}
+          <main>
+            {this.props.children}
+          </main>
         <Footer title={title}/>
       </div>  
     );
