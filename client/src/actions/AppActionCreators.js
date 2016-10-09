@@ -10,6 +10,12 @@ const AppActionCreators = {
   requestData() {
     ServerAPI.requestData();
   },
+  addLocation(location) {
+    AppDispatcher.handleViewAction({
+      type: ActionTypes.ADD_LOCATION,
+      location: location
+    });
+  },
   navigateTo(url) {
     hashHistory.push(url);
   },
