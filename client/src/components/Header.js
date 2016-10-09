@@ -13,10 +13,8 @@ const Header = React.createClass({
         <div className="ui grid">
           <div className="two wide column">
           </div>
-          <div className="middle aligned seven wide column">
+          <div className="middle aligned eleven wide column">
             <h1 className="ui header">{title}</h1>
-          </div>
-          <div className="four wide column">
           </div>
           <div className="middle aligned two wide column">
             <div className="item">

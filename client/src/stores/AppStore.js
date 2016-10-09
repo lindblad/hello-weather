@@ -10,7 +10,7 @@ var _user={displayName: ""};
 
 const AppStore = assign({}, EventEmitter.prototype, {
   getTitle: function() {
-    return "hello-weather";
+    return "hello weather";
   },
   getUser: function() {
     return _user;

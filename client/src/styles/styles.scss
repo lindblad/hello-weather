@@ -4,6 +4,7 @@ $lobster: 'Lobster', cursive;
 $pacifico: 'Pacifico', cursive;
 $pt_caption: 'PT Sans Caption', sans-serif;
 $maven: 'Maven Pro', sans-serif;
+$pink: lighten(#E61A8D, 35%);
 
 .app-header {
   & .header {
@@ -37,4 +38,12 @@ img {
 
 body {
   font-family: $maven;
+  background: $pink;
+  background: -moz-radial-gradient(center, circle cover, #fcfbf7 0%, $pink 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, $pink));
+  background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, $pink 100%);
+  background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, $pink 100%);
+  background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, $pink 100%);
+  background: radial-gradient(center, circle cover, #f7fbfc 0%, $pink 100%);
+  background-color: #f7fbfc;
 }
