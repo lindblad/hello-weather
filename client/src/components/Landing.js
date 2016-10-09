@@ -49,6 +49,11 @@ const Landing = React.createClass({
       return (<ResultItem location={it} result={results[it]} key={it}/>);
     });
     let hasSubmitDisabled = !locations || locations.length === 0;
+    let checkWeatherBtn = locations.length > 0 ? (
+        <button className={"md-btn" + (hasSubmitDisabled ? " disabled" : "")} type="button" onClick={this._onCheckClick}>
+          <span>Check weather</span>
+        </button>
+      ) : null;
     return (
       <div className="ui white vertical segment">
         <div className="ui container main">
@@ -61,13 +66,11 @@ const Landing = React.createClass({
               </button>
             </div>
           </div>
-          <div className="ui vertical center aligned segment">
+          <div className="ui vertical left aligned segment">
             <div className="ui large horizontal divided list">
               {locationItems}
             </div>
-            <button className={"md-btn" + (hasSubmitDisabled ? " disabled" : "")} type="button" onClick={this._onCheckClick}>
-              <span>Check weather</span>
-            </button>
+            {checkWeatherBtn}
             <div className="ui link centered cards">
               {resultItems}
             </div>
