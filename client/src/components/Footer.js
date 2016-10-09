@@ -7,7 +7,7 @@ const Footer = React.createClass({
   render: function() {
     let {title} = this.props;
     return (
-      <footer className="ui vertical blue inverted segment app-footer">
+      <footer className="ui vertical grey inverted segment app-footer">
         <div className="ui container">
           <div className="ui grid">
             <div className="three wide column">

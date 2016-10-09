@@ -15,7 +15,7 @@ var historyApiFallback = require('connect-history-api-fallback')
 
 var bundler = webpack(config);
 
-var apiProxy = proxy(['/login', '/logout', '/views', '/api', "/ajax2", "/ajax", "/builder", "/vix"], {    
+var apiProxy = proxy(['/login', '/logout', '/weather', '/api'], {    
     "target": "http://localhost:3000"
 });
 

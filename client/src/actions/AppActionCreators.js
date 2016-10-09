@@ -16,6 +16,13 @@ const AppActionCreators = {
       location: location
     });
   },
+  checkWeather(locations) {
+    AppDispatcher.handleViewAction({
+      type: ActionTypes.CHECK_WEATHER,
+      locaitons: locations
+    });
+    ServerAPI.requestWeather(locations);
+  },
   removeLocation(location) {
     AppDispatcher.handleViewAction({
       type: ActionTypes.REMOVE_LOCATION,

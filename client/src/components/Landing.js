@@ -4,26 +4,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import AppStore from '../stores/AppStore';
 import ActionCreators from '../actions/AppActionCreators';
-
-const LocationItem = React.createClass({
-  displayName: "LocationItem",
-  _onRemoveLocation() {
-    console.log(`removing ${this.props.location}...`);
-    ActionCreators.removeLocation(this.props.location);
-  },
-  render() {
-    let {location} = this.props;
-    return (
-      <div className="item">
-        <a className="ui large pink label">
-          <i className="marker icon"></i>
-          {location}
-          <i className="delete icon" onClick={this._onRemoveLocation}></i>
-        </a>
-      </div>
-    );
-  }
-});
+import LocationItem from './LocationItem';
 
 const Landing = React.createClass({
   displayName: "Landing",
@@ -47,6 +28,9 @@ const Landing = React.createClass({
     if (!this.state.hasAddDisabled && target.charCode == 13)
       this._onAdd();
   },
+  _onCheckClick() {
+    ActionCreators.checkWeather(this.state.locations);
+  },
   getInitialState() {
     return {hasAddDisabled: true, locations: AppStore.getLocations()};
   },
@@ -67,7 +51,7 @@ const Landing = React.createClass({
         <div className="ui container main">
           <div className="ui vertical segment">
             <div className="ui large action input">
-              <input type="text" placeholder="Enter a location..." ref="locationInput" onChange={this._onLocationInputChange}
+              <input type="text" placeholder="Enter location..." ref="locationInput" onChange={this._onLocationInputChange}
                 onKeyPress={this._onLocationInputKeyPress}/>
               <button className={"ui orange large icon button"  + (hasAddDisabled ? " disabled" : "")} onClick={this._onAdd}>
                 <i className="plus icon" />
@@ -78,7 +62,9 @@ const Landing = React.createClass({
             <div className="ui large horizontal divided list">
               {locationItems}
             </div>
-            <button className={"md-btn" + (hasSubmitDisabled ? " disabled" : "")} type="button"><span>Check weather</span></button>
+            <button className={"md-btn" + (hasSubmitDisabled ? " disabled" : "")} type="button" onClick={this._onCheckClick}>
+              <span>Check weather</span>
+            </button>
           </div>
         </div>
       </div>

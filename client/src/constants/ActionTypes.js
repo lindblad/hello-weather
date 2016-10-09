@@ -8,4 +8,6 @@ export default keymirror({
   REQUEST_DATA_ERROR: null,
   ADD_LOCATION: null,
   REMOVE_LOCATION: null,
+  CHECK_WEATHER: null,
+  REQUEST_WEATHER_SUCCESS: null
 });

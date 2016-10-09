@@ -10,6 +10,14 @@ const ServerActionCreators = {
       response: response,
       user: user
     });
+  },
+  handleWeatherSuccess(response, user, location) {
+    AppDispatcher.handleServerAction({
+      type: ActionTypes.REQUEST_WEATHER_SUCCESS,
+      response: response,
+      user: user,
+      location: location
+    });
   }
 };
 

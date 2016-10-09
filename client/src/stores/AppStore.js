@@ -8,24 +8,28 @@ import _ from 'underscore';
 
 var _user={displayName: "unknown", name: "unknown", "gender": "unknown"};
 var _locations = [];
+var _state = "idle";
 
 const AppStore = assign({}, EventEmitter.prototype, {
-  getTitle: function() {
+  getTitle() {
     return "hello weather";
   },
-  getUser: function() {
+  getUser() {
     return _user;
   },
-  getLocations: function() {
+  getLocations() {
     return _locations;
   },
-  emitChange: function() {
+  getState() {
+    return _state;
+  },
+  emitChange() {
     this.emit(CHANGE_EVENT);
   },
-  addChangeListener: function(callback) {
+  addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  removeChangeListener: function(callback) {
+  removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   },
   dispatcherIndex: AppDispatcher.register(function(payload) {
@@ -48,6 +52,22 @@ const AppStore = assign({}, EventEmitter.prototype, {
         {
           let {location} = action;
           _locations.splice(_locations.indexOf(location), 1);
+        }
+        AppStore.emitChange();
+        break;
+      case ActionTypes.CHECK_WEATHER:
+        {
+          _state = "checking";
+        }
+        AppStore.emitChange();
+        break;
+      case ActionTypes.REQUEST_WEATHER_SUCCESS:
+        let {response, user, location} = action;
+        {
+          _locations.splice(_locations.indexOf(location), 1);
+          console.log(response);
+          if (_locations.length === 0)
+            _state="idle";
         }
         AppStore.emitChange();
         break;

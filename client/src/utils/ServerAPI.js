@@ -32,6 +32,13 @@ function GET(url, successHandler, errorHandler) {
 const ServerAPI = {
   requestData() {
     GET("/api/data", ActionCreators.handleDataSuccess);
+  },
+  requestWeather(locations) {
+    locations.forEach(it => {
+      GET(`/weather?q=${it}`, (response, user) => {
+        ActionCreators.handleWeatherSuccess(response, user, it);
+      });
+    });
   }
 };
 

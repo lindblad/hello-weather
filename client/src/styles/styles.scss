@@ -17,10 +17,10 @@ $pink: lighten(#E61A8D, 35%);
   }
 }
 
-.app-footer {
+.ui.app-footer {
 	position: absolute !important;
 	bottom: 0;
-	height: 5em;
+	padding: 5em;
 	width: 100%;
 	& .header {
 	  font-family: $maven;
