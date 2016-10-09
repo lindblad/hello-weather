@@ -61,6 +61,7 @@ const Landing = React.createClass({
     let locationItems = locations.map((it, idx) => {
       return (<LocationItem key={idx} location={it} />);
     });
+    let hasSubmitDisabled = !locations || locations.length === 0;
     return (
       <div className="ui white vertical segment">
         <div className="ui container main">
@@ -77,6 +78,7 @@ const Landing = React.createClass({
             <div className="ui large horizontal divided list">
               {locationItems}
             </div>
+            <button className={"md-btn" + (hasSubmitDisabled ? " disabled" : "")} type="button"><span>Check weather</span></button>
           </div>
         </div>
       </div>
