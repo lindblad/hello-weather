@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Maven+Pro|PT+Sans+Caption|Pacifico');
+
+$lobster: 'Lobster', cursive;
+$pacifico: 'Pacifico', cursive;
+$pt_caption: 'PT Sans Caption', sans-serif;
+$maven: 'Maven Pro', sans-serif;
+
+.app-header {
+  & .header {
+    font-family: $pacifico;
+  }
+  & .user.name {
+    font-family: $pt_caption;
+    font-weight: bold;
+  }
+}
+
+.app-footer {
+	position: absolute !important;
+	bottom: 0;
+	height: 5em;
+	width: 100%;
+	& .header {
+	  font-family: $maven;
+	}
+}
+
+img {
+  &.user.photo {
+    border-radius: 3%;
+  }
+}
+
+.ui.vertical.segment {
+	border-bottom: none;
+}
+
+body {
+  font-family: $maven;
+}

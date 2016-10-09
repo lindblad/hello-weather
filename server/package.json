@@ -1,0 +1,38 @@
+{
+  "name": "gui_node",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.7.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "nf start",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "commander": "^2.9.0",
+    "cookie-parser": "^1.4.3",
+    "debug": "~2.2.0",
+    "dot": "^1.0.3",
+    "express": "~4.14.0",
+    "express-session": "^1.14.0",
+    "foreman": "2.0.0",
+    "highland": "^3.0.0-beta.2",
+    "http-proxy-middleware": "^0.17.0",
+    "method-override": "^2.3.6",
+    "morgan": "~1.7.0",
+    "node-uuid": "^1.4.7",
+    "passport": "^0.3.2",
+    "passport-azure-ad": "^2.0.1",
+    "passport-facebook": "^2.1.1",
+    "passport-wsfed-saml2": "^2.11.6",
+    "request": "^2.74.0",
+    "uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.0.2"
+  }
+}

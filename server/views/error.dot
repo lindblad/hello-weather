@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="ui white vertical segment">
+        <div class="ui two column centered grid" style="margin-top: 20px">
+        	<div class="ui column">
+				
+				<div class="ui top attached header">
+					<i class="settings icon"></i>
+					Error on server:
+				</div>
+		  		<div class="ui bottom attached segment">
+		  			<p>{{= it.error.status + " " + it.message}}</p>
+		  		</div>
+		  	
+		  	</div>
+		</div>
+	</div>
+</body>
+</html>

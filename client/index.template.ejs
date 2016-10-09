@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hello-weather</title>
+  <link rel="stylesheet" type="text/css" href="/public/semantic/dist/semantic.min.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.ico" sizes="32x32" />
+  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+  <script type="text/javascript">window._trackJs = {token: '<%= htmlWebpackPlugin.options.trackJSToken %>'};</script>
+  <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+  <% } %>
+</head>
+<body>
+  <div id="react-view"></div>
+</body>
+</html>
