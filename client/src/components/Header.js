@@ -9,18 +9,10 @@ const Header = React.createClass({
     let {user, location, title} = this.props;
     let name = user.name && user.name != "" ? user.name : user.displayName; 
     return (
-      <header className="ui yellow inverted vertical segment app-header">
-        <div className="ui grid">
-          <div className="one wide column">
-          </div>
-          <div className="middle aligned ten wide column">
-            <div className="ui header">{title}</div>
-          </div>
-          <div className="middle aligned five wide column">
-            <img className="ui bottom aligned image user photo" 
-              src={user.photo} alt=""/>
-          </div>
-        </div>
+      <header className="ui yellow inverted vertical segment app-header clearfix">
+        <div className="ui header">{title}</div>
+        <img className="ui image user photo" 
+          src={user.photo} alt=""/>
       </header>
     );
   }
