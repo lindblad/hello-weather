@@ -21,7 +21,8 @@ const Landing = React.createClass({
     this.setState({hasAddDisabled: disabled});
   },
   _onChange() {
-    this.setState({locations: AppStore.getLocations(), results: AppStore.getResults()});
+    this.setState({locations: AppStore.getLocations(), 
+      results: AppStore.getResults(), state: AppStore.getState()});
   },
   _onLocationInputKeyPress(target) {
     if (!this.state.hasAddDisabled && target.charCode == 13)
@@ -32,7 +33,7 @@ const Landing = React.createClass({
   },
   getInitialState() {
     return {hasAddDisabled: true, locations: AppStore.getLocations(),
-      results: AppStore.getResults()};
+      results: AppStore.getResults(), state: AppStore.getState()};
   },
   componentDidMount() { 
     AppStore.addChangeListener(this._onChange);
@@ -41,7 +42,7 @@ const Landing = React.createClass({
     AppStore.removeChangeListener(this._onChange);
   },
   render() {
-    let {hasAddDisabled, locations, results} = this.state;
+    let {hasAddDisabled, locations, results, state} = this.state;
     let locationItems = locations.map((it, idx) => {
       return (<LocationItem key={idx} location={it} />);
     });
@@ -54,6 +55,7 @@ const Landing = React.createClass({
           <span>Check weather</span>
         </button>
       ) : null;
+    var dimmer = "ui inverted dimmer" + (state !== "idle" ? ' active' : '');
     return (
       <div className="ui white vertical segment">
         <div className="ui container main">
@@ -66,7 +68,10 @@ const Landing = React.createClass({
               </button>
             </div>
           </div>
-          <div className="ui vertical left aligned segment">
+          <div className="ui vertical left aligned segment dimming">
+            <div className={dimmer}>
+              <div className="ui large text loader">{state}</div>
+            </div>
             <div className="ui large horizontal divided list">
               {locationItems}
             </div>
