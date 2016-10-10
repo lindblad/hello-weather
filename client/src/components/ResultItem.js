@@ -11,19 +11,20 @@ const ResultItem = React.createClass({
         <div className="content">
           <div className="header">
             {`${result.name},${result.sys.country}`}
+            &nbsp;&nbsp;&nbsp;{`${result.main.temp}`}&deg;C
           </div>
-          <div className="meta">{`(lon: ${result.coord.lon} lat: ${result.coord.lat})`}</div>
-          <div className="meta">
-            <a>{`${result.weather[0].description} icon ${result.weather[0].icon}`}</a>
+          <div className="ui tiny image">
+            <img src={`http://openweathermap.org/img/w/${result.weather[0].icon}.png`} alt=""/>
           </div>
+          <span className="meta">
+            <a>{`${result.weather[0].description}`}</a>
+          </span>
         </div>
         <div className="content left aligned">
           <div className="description">
-            <div>{`Temperature: ${result.main.temp}`}</div>
-            <div>{`Pressure: ${result.main.pressure}`}</div>
-            <div>{`Humidity: ${result.main.humidity}`}</div>
-            <div>{`Wind: ${result.wind.speed} m/s, ${result.wind.deg} deg`}</div>
-            <div>{`Humidity: ${result.main.humidity}`}</div>
+            <div>{`Pressure: ${result.main.pressure}hpa`}</div>
+            <div>{`Humidity: ${result.main.humidity}%`}</div>
+            <div>{`Wind: ${result.wind.speed} m/s, ${result.wind.deg}`}&deg;</div>
           </div>
         </div>
       </div>

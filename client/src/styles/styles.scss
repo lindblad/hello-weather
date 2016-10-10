@@ -31,9 +31,17 @@ $pink: lighten(#E61A8D, 35%);
 .ui.app-footer {
 	height: 70px;
 	width: 100%;
-	& .header {
+	& > .header {
+    margin-right: 2em;
+    float: right;
 	  font-family: $maven;
 	}
+  & > img.ui.tiny.image {
+    margin-right: 1em;
+    float: right;
+    height: 50px;
+    width: auto;
+  }
 }
 
 img {

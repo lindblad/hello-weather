@@ -71,7 +71,7 @@ const Landing = React.createClass({
               {locationItems}
             </div>
             {checkWeatherBtn}
-            <div className="ui link centered cards">
+            <div className="ui centered cards">
               {resultItems}
             </div>
           </div>
